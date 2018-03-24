@@ -9,9 +9,11 @@ import router from './router'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import VueResource from 'vue-resource';
 
 Vue.config.productionTip = false;
 Vue.use(MintUI);
+Vue.use(VueResource);
 Vue.use(BootstrapVue);
 Vue.component('mt-datetime-picker', DatetimePicker);
 Vue.component('mt-header', Header);
