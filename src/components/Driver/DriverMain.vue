@@ -63,7 +63,7 @@
 
 <script>
   export default {
-    name: 'MainPage',
+    name: 'DriverMain',
     methods: {
       startTimeOpen() {
         console.log(this.$refs);

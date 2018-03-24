@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainPage from '@/components/MainPage'
-import DriverPage from '@/components/DriverPage'
+import DriverMain from '@/components/Driver/DriverMain'
+import CustomerMain from '@/components/Customer/CustomerMain'
 
 Vue.use(Router)
 
@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'MainPage',
-      component: MainPage
+      name: 'DriverMain',
+      component: DriverMain
     },
     {
-      path: '/driver',
-      name: 'DriverPage',
-      component: DriverPage
+      path: '/customer',
+      name: 'CustomerMain',
+      component: CustomerMain
     }
   ]
 })
