@@ -1,63 +1,79 @@
 <template>
-  <div>
-    <mt-header title="New Schedules">
-    </mt-header>
-    <div class="container">
-      <div>Pick Up Address</div>
-      <div>{PLACEHOLDER HERE}</div>
+  <div class="main">
+    <mt-header title="New Schedules"></mt-header>
+    <b-container>
+      <b-row>
+        <b-col cols="12">HEHEH</b-col>
+        <b-col cols="3">
+          FROM
+        </b-col>
+        <b-col cols="9">
+          <b-row>
+            <b-col cols="12">Something</b-col>
+            <b-col cols="12">Something</b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="3">
+          TO
+        </b-col>
+        <b-col cols="9">
+          <b-row>
+            <b-col cols="12">Something</b-col>
+            <b-col cols="12">Something</b-col>
+          </b-row>
+        </b-col>
+        <b-col cols="12">
+
+        </b-col>
+      </b-row>
+    </b-container>
+    <!--<div class="message-container">{Placeholder text}</div>
+    <div class="section">
       <div>
-        <mt-button class="button-80" size="small" type="primary">Choose Address</mt-button>
+        <div class="label-container">From</div>
+      </div>
+      <div>
+        <div class="form-container">
+          <div class="form-input">Test</div>
+          <div class="form-input">Test</div>
+        </div>
       </div>
     </div>
-    <i class="fa fa-arrow-down"></i>
-    <div class="container">
-      <div>Drop Off Address</div>
-      <div>{PLACEHOLDER HERE}</div>
+    <div class="section">
       <div>
-        <mt-button class="button-80" size="small" type="primary">Choose Address</mt-button>
+        <div class="label-container">To</div>
+      </div>
+      <div>
+        <div class="form-container">
+          <div class="form-input">Test</div>
+          <div class="form-input">Test</div>
+        </div>
       </div>
     </div>
-    <hr/>
-    <table class="w-100">
-      <tr>
-        <td class="big-td">
-          <div>
-            Pick Up Time
-          </div>
-          <div>
-            {PLACEHOLDER HERE}
-          </div>
-          <div>
-            <mt-button class="button" v-on:click="startTimeOpen" type="primary" size="small">Set Time</mt-button>
-          </div>
-          <mt-datetime-picker
-            ref="picker"
-            type="datetime"
-            v-model="pickUpTime">
-          </mt-datetime-picker>
-        </td>
-        <td class="small-td">
-          ~
-        </td>
-        <td class="big-td">
-          <div>
-            Drop Off Time
-          </div>
-          <div>
-            {PLACEHOLDER HERE}
-          </div>
-          <div>
-            <mt-button class="button" type="primary" size="small">Set Time</mt-button>
-          </div>
-          <mt-datetime-picker
-            ref="picker2"
-            type="datetime"
-            v-model="pickUpTime">
-          </mt-datetime-picker>
-        </td>
-      </tr>
-    </table>
-    <mt-button style="bottom: 0; left: 0; position: absolute; width: 100%;" type="primary">GO</mt-button>
+    <div class="section">
+      {Some more placeholder text}
+      <div>
+        <ul class="selection">
+          <li class="selection-item">A</li>
+          <li class="selection-item">B</li>
+          <li class="selection-item">C</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section">
+      {Some more placeholder text}
+      <div>
+        <ul class="selection">
+          <li class="selection-item">A</li>
+          <li class="selection-item">B</li>
+          <li class="selection-item">C</li>
+        </ul>
+      </div>
+    </div>
+    <div class="map">
+      MAP HERE
+    </div>
+    <mt-button class="footer" type="primary"> Onegai</mt-button>-->
   </div>
 </template>
 
@@ -80,31 +96,65 @@
 </script>
 
 <style scoped>
-  div {
-    margin: 0.5em 0;
+  .main {
+    height: 100%;
+    padding-bottom: 46px;
   }
 
-  .button-80 {
-    width: 80%;
+  .section {
+    margin: 6px 0;
+    height: 60px;
   }
 
-  .container {
-    margin: 1em 0;
+  .message-container {
+    padding: 5px;
   }
 
-  .big-td {
-    width: 45%;
+  .label-container {
+    width: 30%;
+    background: aqua;
+    height: 60px;
+    line-height: 60px;
+    float: left;
   }
 
-  .small-td {
-    width: 10%;
+  .form-container {
+    width: 70%;
+    background: aquamarine;
+    float: right;
+    height: 60px;
   }
 
-  .fa {
-    margin-bottom: 1em;
+  .form-input {
+    height: 24px;
+    padding: 3px;
   }
 
-  .w-100 {
+  .selection {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .selection-item {
+    display: inline-block;
+    padding: 6px 0;
+    width: 33%;
+    margin: 0;
+    border: 2px black solid;
+  }
+
+  .map {
+    height: 250px;
+    background: azure;
+  }
+
+  .footer {
+    height: 46px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
   }
 </style>
