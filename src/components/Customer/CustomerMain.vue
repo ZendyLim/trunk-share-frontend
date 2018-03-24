@@ -23,7 +23,22 @@
           </b-row>
         </b-col>
         <b-col cols="12">
-
+          <b-form-group label="Something">
+            <b-form-radio-group id="btnradios1"
+                                buttons
+                                v-model="selected"
+                                :options="options"
+                                name="radiosBtnDefault" />
+          </b-form-group>
+        </b-col>
+        <b-col cols="12">
+          <b-form-group label="Something">
+            <b-form-radio-group id="btnradios1"
+                                buttons
+                                v-model="selected"
+                                :options="options"
+                                name="radiosBtnDefault" />
+          </b-form-group>
         </b-col>
       </b-row>
     </b-container>
@@ -88,8 +103,12 @@
     },
     data() {
       return {
-        msg: 'Chicken',
-        pickUpTime: ''
+        selected: 'radio1',
+        options: [
+          { text: 'Radio 1', value: 'radio1' },
+          { text: 'Radio 3', value: 'radio2' },
+          { text: 'Radio 4', value: 'radio4' }
+        ]
       }
     }
   }
