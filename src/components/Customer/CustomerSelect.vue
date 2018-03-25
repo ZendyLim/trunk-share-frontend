@@ -16,7 +16,7 @@
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item>
-            <b-img rounded="circle" width="40" height="40" src="../../assets/img1.jpg" fluid/>
+            <b-img rounded="circle" width="40" height="40" src="../../assets/img2.jpg" fluid/>
           </b-nav-item>
         </b-navbar-nav>
       </b-navbar>
@@ -24,10 +24,10 @@
     <b-container>
       <b-row style="padding-top: 75px;">
         <b-col cols="12" class="pt-3">
-          <b-img rounded="circle" blank width="115" height="115" blank-color="#777" alt="img" class="m-1"/>
+          <b-img rounded="circle" width="115" height="115" src="../../assets/img1.jpg" alt="img" class="m-1"/>
         </b-col>
         <b-col cols="12" class="pt-2 pb-3">
-          <b>Name Name</b>
+          <b>Toyoda</b>
         </b-col>
         <b-col cols="12" class="pt-3 pb-3 mb-2" style="background: #FCEAE5">
           <b-row>
@@ -48,7 +48,7 @@
                   <b-row>
                     <b-col cols="3">Driving</b-col>
                     <b-col cols="9">
-                      <b-progress :max="100" height="20px" class="no-rad">
+                      <b-progress :max="100" height="20px" class="mb-1 no-rad">
                         <b-progress-bar :value="80" class="bg-pink"></b-progress-bar>
                       </b-progress>
                     </b-col>
@@ -58,7 +58,7 @@
                   <b-row>
                     <b-col cols="3">Time</b-col>
                     <b-col cols="9">
-                      <b-progress :max="100" height="20px" class="no-rad">
+                      <b-progress :max="100" height="20px" class="mb-1 no-rad">
                         <b-progress-bar :value="90" class="bg-pink"></b-progress-bar>
                       </b-progress>
                     </b-col>
@@ -68,7 +68,7 @@
                   <b-row>
                     <b-col cols="3">Route</b-col>
                     <b-col cols="9">
-                      <b-progress :max="100" height="20px" class="no-rad">
+                      <b-progress :max="100" height="20px" class="mb-1 no-rad">
                         <b-progress-bar :value="70" class="bg-pink"></b-progress-bar>
                       </b-progress>
                     </b-col>

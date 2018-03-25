@@ -135,6 +135,9 @@
       MAP HERE
     </div>
     <button class="btn btn-primary btn-block no-rad" v-on:click="submit"><b>Register</b></button>
+    <b-modal :ok-only="true" id="modal1" title="Confirmation" ref="modal">
+      <p class="my-4">Schedule Saved!</p>
+    </b-modal>
   </div>
 </template>
 
@@ -179,9 +182,10 @@
             break;
         }
 
+
         axios.post('http://87dff48b.ngrok.io/drivers/new', JSON.stringify(object)).then(function (response) {
           if (response.status == 202) {
-
+            this.$refs.modal.show();
           }
         })
           .catch(function (error) {
@@ -195,8 +199,8 @@
         startAt: '',
         whereTo: '',
         endAt: '',
-        selectedTransport: '',
-        selectedInterval: '',
+        selectedTransport: 'ByCar',
+        selectedInterval: 'Weekdays',
         optionsTransport: [
           {text: 'Car', value: 'ByCar'},
           {text: 'Motorcycle', value: 'ByMotorcycle'},

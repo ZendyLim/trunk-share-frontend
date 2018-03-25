@@ -9,7 +9,7 @@
         </b-navbar-nav>
         <b-navbar-nav class="ml-auto">
           <b-nav-item>
-            <b-img rounded="circle" width="40" height="40" src="../../assets/img1.jpg" fluid/>
+            <b-img rounded="circle" width="40" height="40" src="../../assets/img2.jpg" fluid/>
           </b-nav-item>
         </b-navbar-nav>
       </b-navbar>
@@ -155,7 +155,9 @@
     <div class="map">
       MAP HERE
     </div>
+    <router-link :to="{ name: 'CustomerDriver' }">
     <button class="btn btn-primary btn-block no-rad"><b>Search</b></button>
+    </router-link>
   </div>
 </template>
 
