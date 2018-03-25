@@ -4,7 +4,9 @@
       <b-navbar fixed="top" type="dark" class="bg-pink">
         <b-navbar-nav>
           <b-nav-item>
-            <i class="fa fa-2x fa-angle-left"></i>
+            <router-link :to="{ name: 'CustomerDriver' }" style="color: #ffffff;">
+              <i class="fa fa-2x fa-angle-left"></i>
+            </router-link>
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="m-auto">
@@ -21,16 +23,61 @@
     </div>
     <b-container>
       <b-row style="padding-top: 75px;">
-        <b-col cols="12" class="pt-5">
+        <b-col cols="12" class="pt-3">
           <b-img rounded="circle" blank width="115" height="115" blank-color="#777" alt="img" class="m-1"/>
         </b-col>
-        <b-col cols="12" class="pt-2 pb-2">
-          <i class="fa fa-star icon"></i>
-          <i class="fa fa-star icon"></i>
-          <i class="fa fa-star icon"></i>
-        </b-col>
-        <b-col cols="12" class="pt-2 pb-5">
+        <b-col cols="12" class="pt-2 pb-3">
           <b>Name Name</b>
+        </b-col>
+        <b-col cols="12" class="pt-3 pb-3 mb-2" style="background: #FCEAE5">
+          <b-row>
+            <b-col cols="4">
+              <div style="display: table; height: 100%;">
+                <p style="display: table-cell; vertical-align: middle;">
+                  <i class="fa fa-star icon" style="font-size: 12px"></i>
+                  <i class="fa fa-star icon" style="font-size: 12px"></i>
+                  <i class="fa fa-star icon" style="font-size: 12px"></i>
+                  <i class="fa fa-star icon" style="font-size: 12px"></i>
+                  <i class="fa fa-star icon" style="font-size: 12px"></i>
+                </p>
+              </div>
+            </b-col>
+            <b-col cols="8">
+              <b-row>
+                <b-col cols="12">
+                  <b-row>
+                    <b-col cols="3">Driving</b-col>
+                    <b-col cols="9">
+                      <b-progress :max="100" height="20px" class="no-rad">
+                        <b-progress-bar :value="80" class="bg-pink"></b-progress-bar>
+                      </b-progress>
+                    </b-col>
+                  </b-row>
+                </b-col>
+                <b-col cols="12">
+                  <b-row>
+                    <b-col cols="3">Time</b-col>
+                    <b-col cols="9">
+                      <b-progress :max="100" height="20px" class="no-rad">
+                        <b-progress-bar :value="90" class="bg-pink"></b-progress-bar>
+                      </b-progress>
+                    </b-col>
+                  </b-row>
+                </b-col>
+                <b-col cols="12">
+                  <b-row>
+                    <b-col cols="3">Route</b-col>
+                    <b-col cols="9">
+                      <b-progress :max="100" height="20px" class="no-rad">
+                        <b-progress-bar :value="70" class="bg-pink"></b-progress-bar>
+                      </b-progress>
+                    </b-col>
+                  </b-row>
+                </b-col>
+              </b-row>
+            </b-col>
+          </b-row>
+
         </b-col>
         <b-col cols="12" class="pt-2 pb-2">
           <b-row>
@@ -98,8 +145,17 @@
 </template>
 
 <script>
+  import Vue from 'vue'
+
   export default {
     name: 'CustomerSelect',
+    /*created: function () {
+      Vue.http.get('http://5b846d5e.ngrok.io/drivers/').then(response => {
+        this.drivers = response.body;
+      }, response => {
+
+      });
+    },*/
     methods: {
       startTimeOpen() {
         console.log(this.$refs);

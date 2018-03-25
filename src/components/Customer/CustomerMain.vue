@@ -2,11 +2,6 @@
   <div class="main">
     <div>
       <b-navbar fixed="top" type="dark" class="bg-pink">
-        <b-navbar-nav>
-          <b-nav-item>
-            <i class="fa fa-2x fa-angle-left"></i>
-          </b-nav-item>
-        </b-navbar-nav>
         <b-navbar-nav class="m-auto">
           <b-nav-item>
             <h3 class="text-light">Find Driver</h3>

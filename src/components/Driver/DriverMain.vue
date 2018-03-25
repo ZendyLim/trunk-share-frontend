@@ -2,11 +2,6 @@
   <div class="main">
     <div>
       <b-navbar fixed="top" type="dark" class="bg-pink">
-        <b-navbar-nav>
-          <b-nav-item>
-            <i class="fa fa-2x fa-angle-left"></i>
-          </b-nav-item>
-        </b-navbar-nav>
         <b-navbar-nav class="m-auto">
           <b-nav-item>
             <h3 class="text-light">Input Route</h3>
@@ -45,7 +40,7 @@
                       <i class="fa fa-map-marker icon"></i>
                     </b-col>
                     <b-col cols="10" class="pl-0">
-                      <b-form-input v-model="text1"
+                      <b-form-input v-model="whereFrom"
                                     size="sm"
                                     type="text"
                                     placeholder="Where From"></b-form-input>
@@ -58,7 +53,7 @@
                       <i class="fa fa-clock icon"></i>
                     </b-col>
                     <b-col cols="10" class="pl-0">
-                      <b-form-input v-model="text2"
+                      <b-form-input v-model="startAt"
                                     size="sm"
                                     type="text"
                                     placeholder="Time"></b-form-input>
@@ -91,7 +86,7 @@
                       <i class="fa fa-map-marker icon"></i>
                     </b-col>
                     <b-col cols="10" class="pl-0">
-                      <b-form-input v-model="text3"
+                      <b-form-input v-model="whereTo"
                                     size="sm"
                                     type="text"
                                     placeholder="Where To"></b-form-input>
@@ -104,7 +99,7 @@
                       <i class="fa fa-clock icon"></i>
                     </b-col>
                     <b-col cols="10" class="pl-0">
-                      <b-form-input v-model="text4"
+                      <b-form-input v-model="endAt"
                                     size="sm"
                                     type="text"
                                     placeholder="Time"></b-form-input>
@@ -139,36 +134,78 @@
     <div class="map">
       MAP HERE
     </div>
-    <button class="btn btn-primary btn-block no-rad"><b>Register</b></button>
+    <button class="btn btn-primary btn-block no-rad" v-on:click="submit"><b>Register</b></button>
   </div>
 </template>
 
 <script>
+  import Vue from 'vue'
+
+  var axios = require('axios');
+
+
   export default {
     name: 'CustomerMain',
     methods: {
-      startTimeOpen() {
-        console.log(this.$refs);
-        this.$refs.picker.open();
+      submit() {
+        let object = {};
+        object.id = 0;
+        object.name = "tester001";
+        object.whereFrom = this.whereFrom;
+        object.startAt = this.startAt;
+        object.whereTo = this.whereTo;
+        object.endAt = this.endAt;
+        object.rating = 0;
+        switch (this.selectedTransport) {
+          default:
+            object.commutionType = {ByBicycle: {}};
+            break;
+          case 'ByCar':
+            object.commutionType = {ByCar: {}};
+            break;
+          case 'ByMotorcycle':
+            object.commutionType = {ByBicycle: {}};
+            break;
+        }
+        switch (this.selectedInterval) {
+          default:
+            object.frequency = {Others: {}};
+            break;
+          case 'Weekdays':
+            object.frequency = {Weekdays: {}};
+            break;
+          case 'Holidays':
+            object.frequency = {Holidays: {}};
+            break;
+        }
+
+        axios.post('http://87dff48b.ngrok.io/drivers/new', JSON.stringify(object)).then(function (response) {
+          if (response.status == 202) {
+
+          }
+        })
+          .catch(function (error) {
+            console.log(error);
+          });
       }
     },
     data() {
       return {
-        text1: '',
-        text2: '',
-        text3: '',
-        text4: '',
-        selectedTransport: '1',
-        selectedInterval: 'W',
+        whereFrom: '',
+        startAt: '',
+        whereTo: '',
+        endAt: '',
+        selectedTransport: '',
+        selectedInterval: '',
         optionsTransport: [
-          {text: 'Car', value: '1'},
-          {text: 'Motorcycle', value: '2'},
-          {text: 'Bicycle', value: '3'}
+          {text: 'Car', value: 'ByCar'},
+          {text: 'Motorcycle', value: 'ByMotorcycle'},
+          {text: 'Bicycle', value: 'ByBicycle'}
         ],
         optionsInterval: [
-          {text: 'Weekdays', value: 'W'},
-          {text: 'Holidays', value: 'H'},
-          {text: 'Others', value: 'O'}
+          {text: 'Weekdays', value: 'Weekdays'},
+          {text: 'Holidays', value: 'Holidays'},
+          {text: 'Others', value: 'Others'}
         ]
       }
     }

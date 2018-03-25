@@ -4,7 +4,9 @@
       <b-navbar fixed="top" type="dark" class="bg-pink">
         <b-navbar-nav>
           <b-nav-item>
-            <i class="fa fa-2x fa-angle-left"></i>
+            <router-link :to="{ name: 'CustomerMain' }" style="color: #ffffff;">
+              <i class="fa fa-2x fa-angle-left"></i>
+            </router-link>
           </b-nav-item>
         </b-navbar-nav>
         <b-navbar-nav class="m-auto">
@@ -84,7 +86,7 @@
   export default {
     name: 'CustomerDriver',
     created: function () {
-      Vue.http.get('http://5b846d5e.ngrok.io/drivers').then(response => {
+      Vue.http.get('http://87dff48b.ngrok.io/drivers').then(response => {
         this.drivers = response.body;
       }, response => {
 
